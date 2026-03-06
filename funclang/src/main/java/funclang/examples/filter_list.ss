@@ -1,0 +1,10 @@
+(define filter_list 
+  (lambda (pred lst)
+    (if (null? lst) (list)
+      (if (pred (car lst))
+        (cons (car lst) (filter_list pred (cdr lst)))
+        (filter_list pred (cdr lst))
+      )
+    )
+  )
+)
